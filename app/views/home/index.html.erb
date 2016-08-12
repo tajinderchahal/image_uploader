@@ -1,0 +1,24 @@
+<br>
+<div class="row">
+  <div class="col-md-12">
+    <% @album_images.each do |image| %>
+    <div class="col-md-3" style="margin-bottom: 10px;">
+      <div class="col-md-12" style="border:1px solid #eee;position:relative;background: url(<%= image.avatar %>);
+            height: 300px;background-position: 50%; background-size: cover !important;">
+        <div style="position: absolute; width: 100%; height: 60px; bottom:0px;
+            background-color: rgba(0, 0, 0, 0.41);color: #fff; left:0px;padding:10px;">
+          <b><%= image.name %><b><br>
+          <a style="color: #fff;" href="/album/<%= image.album_id %>/images?name=<%= image.album.name %>"><%= image.album.name %></a>
+        </div>
+      </div>
+    </div>
+    <% end %>
+    <% if @album_images.count == 0 %>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h4 class="text-info text-center">No Image Uploaded Yet</h4>
+    <% end %>
+  </div>
+</div>

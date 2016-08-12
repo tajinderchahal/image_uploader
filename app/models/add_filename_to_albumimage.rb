@@ -1,0 +1,2 @@
+class AddFilenameToAlbumimage < ApplicationRecord
+end

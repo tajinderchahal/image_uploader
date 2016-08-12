@@ -1,0 +1,15 @@
+<div class="col-md-12">
+  <h2>My Albums</h2>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <% @albums.each do |album| %>
+    <div class="col-md-3">
+      <a href="/album/<%= album.id %>/images?name=<%= album.name %>" class="col-md-12 alert alert-info" >
+          <%= album.name %>
+      </a>
+    </div>
+    <% end %>
+  </div>
+</div>
