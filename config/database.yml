@@ -23,3 +23,7 @@ test:
 
 production:
   <<: *default
+  host: ec2-54-247-121-238.eu-west-1.compute.amazonaws.com
+  database: d873hpeu3rdlup
+  username: wtfuzsmujrupat
+  password: VGLt7c5har9b_BLf63XWqmlU01
