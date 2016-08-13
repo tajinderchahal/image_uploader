@@ -21,7 +21,7 @@ class UploadController < ApplicationController
         if AlbumImage.where(:album_id => @album_id).count > 25
            @image_limit = true
         end
-    elsif params[:new_album]
+    elsif params[:new_album] != ''
         # create new if new album
         new_album = Album.create(:name => params[:new_album],\
                      :user_id => current_user.id,\
@@ -29,6 +29,8 @@ class UploadController < ApplicationController
                      :created_at => Time.now,\
                      :updated_at => Time.now)
         @album_id = new_album.id
+    else
+        @album_id = nil
     end
 
    # creating entry for new image in database
@@ -38,17 +40,17 @@ class UploadController < ApplicationController
                              :avatar => params[:attachment])
 
     # validating data provided
-    @albums = Album.where(user_id: current_user.id)
-    @upload_image = ''
     if !@upload.valid?
-        render 'new'
+        @albums = Album.where(user_id: current_user.id)
+        @upload_image = ''
+        render :action => 'new'
     else
         if @image_limit
           @upload.errors.add(:image_upload_limit, 'You cannot upload more than 25 images to an album')
           render 'new' and return true
         end
         @upload.save
-        redirect_to action: "new", :album_id => @album_id
+        render 'success'
     end
   end
 end

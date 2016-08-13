@@ -5,8 +5,7 @@ Rails.application.routes.draw do
   root 'home#index', vai: [:get]
   get 'upload', :to => 'upload#new'
   post 'upload', :to => 'upload#create'
-  #root 'upload#new', via: [:get]
-  #root 'upload#create', via: [:post]
+  #get 'success', :to => 'upload#success'
   get 'album/:id/images', :to => 'images#index'
   resources :album
 
