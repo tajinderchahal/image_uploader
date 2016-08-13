@@ -1,5 +1,7 @@
 # IMAGE SHARING APP
 
+Live demo: [`http://nuvoex.herokuapp.com/`] (http://nuvoex.herokuapp.com)
+
 This application is used to create Albums and upload images to the albums.
 Each album can have only 25 images almost.
 
