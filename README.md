@@ -1,24 +1,16 @@
-# README
+# IMAGE SHARING APP
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This application is used to create Albums and upload images to the albums.
+Each album can have only 25 images almost.
 
-Things you may want to cover:
+User can register in the application and can create albums and upload images to their albums.
+Visitors and User can view last 25 images uploaded in the application by users.
 
-* Ruby version
+Album and its contains image viewing rights are open to any user.
 
-* System dependencies
+Gem used for creating the application:
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Devise: This gem is used for authentication for the application.
+* CarrierWave: This gem is used for image uploading and saving it to server.
+* pg: Postgres SQL is used as database.
+* rails_admin: This gem is used to manage the data uploaded by admin.
